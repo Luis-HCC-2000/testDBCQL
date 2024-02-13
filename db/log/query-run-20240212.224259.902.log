@@ -1,0 +1,11 @@
+[2024-02-12 22:42:59] This is codeql query run /dependencyflow-javascript/0.0.1/VulnerableCallsSummarize.ql -d /in/db -o candidate.bqrs
+[2024-02-12 22:42:59] Log file was started late.
+[2024-02-12 22:43:00] Calling plumbing command: codeql resolve ram --format=json
+[2024-02-12 22:43:00] Plumbing command codeql resolve ram completed:
+                      [
+                        "-J-Xmx3516M",
+                        "--off-heap-ram=4504"
+                      ]
+[2024-02-12 22:43:00] Spawning plumbing command: execute queries -J-Xmx3516M --off-heap-ram=4504 --verbosity=progress --logdir=/in/db/log --evaluator-log-level=5 --warnings=show --qlconfig-file=/qlconfig.yml --output=/candidate.bqrs -- /in/db/db-javascript path:/dependencyflow-javascript/0.0.1/VulnerableCallsSummarize.ql
+[2024-02-12 22:43:59] Plumbing command codeql execute queries terminated with status 0.
+[2024-02-12 22:43:59] Exiting with code 0

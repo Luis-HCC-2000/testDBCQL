@@ -1,0 +1,12 @@
+[2024-02-12 21:19:46] This is codeql query run /dependencyflow-javascript/0.0.1/VulnerableCallsSummarize.ql -d /in/db -o candidate.bqrs
+[2024-02-12 21:19:46] Log file was started late.
+[2024-02-12 21:19:46] Calling plumbing command: codeql resolve ram --format=json
+[2024-02-12 21:19:46] Plumbing command codeql resolve ram completed:
+                      [
+                        "-J-Xmx3516M",
+                        "--off-heap-ram=4504"
+                      ]
+[2024-02-12 21:19:46] Spawning plumbing command: execute queries -J-Xmx3516M --off-heap-ram=4504 --verbosity=progress --logdir=/in/db/log --evaluator-log-level=5 --warnings=show --qlconfig-file=/qlconfig.yml --output=/candidate.bqrs -- /in/db/db-javascript path:/dependencyflow-javascript/0.0.1/VulnerableCallsSummarize.ql
+[2024-02-12 21:19:49] [ERROR] Spawned process exited abnormally (code 2; tried to run: [/utils/codeql/tools/linux64/java/bin/java, -Xmx3516M, -Djava.library.path=/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib, -cp, /utils/codeql/tools/codeql.jar, com.semmle.cli2.CodeQL, env_argv, execute, queries, -J-Xmx3516M, _, _, _, _, _, _, _, --, /in/db/db-javascript, _])
+[2024-02-12 21:19:49] Plumbing command codeql execute queries terminated with status 2.
+[2024-02-12 21:19:49] Exiting with code 2

@@ -1,0 +1,59 @@
+[2024-02-12 21:19:47] This is codeql execute queries -J-Xmx3516M --off-heap-ram=4504 --verbosity=progress --logdir=/in/db/log --evaluator-log-level=5 --warnings=show --qlconfig-file=/qlconfig.yml --output=/candidate.bqrs -- /in/db/db-javascript path:/dependencyflow-javascript/0.0.1/VulnerableCallsSummarize.ql
+[2024-02-12 21:19:47] Calling plumbing command: codeql resolve queries --qlconfig-file=/qlconfig.yml --format=json -- path:/dependencyflow-javascript/0.0.1/VulnerableCallsSummarize.ql
+[2024-02-12 21:19:47] [PROGRESS] resolve queries> Recording pack reference microsoft-sdl/javascript-vulnerable-calls at /dependencyflow-javascript/0.0.1.
+[2024-02-12 21:19:47] Plumbing command codeql resolve queries completed:
+                      [
+                        "/dependencyflow-javascript/0.0.1/VulnerableCallsSummarize.ql"
+                      ]
+[2024-02-12 21:19:47] Refusing fancy output: The terminal is not an xterm: 
+[2024-02-12 21:19:47] Creating executor with 1 threads.
+[2024-02-12 21:19:49] Calling plumbing command: codeql resolve extensions --qlconfig-file=/qlconfig.yml path:/dependencyflow-javascript/0.0.1/VulnerableCallsSummarize.ql
+[2024-02-12 21:19:49] Calling plumbing command: codeql resolve queries --qlconfig-file=/qlconfig.yml --allow-library-packs --format startingpacks -- path:/dependencyflow-javascript/0.0.1/VulnerableCallsSummarize.ql
+[2024-02-12 21:19:49] [PROGRESS] resolve queries> Recording pack reference microsoft-sdl/javascript-vulnerable-calls at /dependencyflow-javascript/0.0.1.
+[2024-02-12 21:19:49] Plumbing command codeql resolve queries completed:
+                      [
+                        "/dependencyflow-javascript/0.0.1"
+                      ]
+[2024-02-12 21:19:49] Calling plumbing command: codeql resolve extensions-by-pack --qlconfig-file=/qlconfig.yml -- /dependencyflow-javascript/0.0.1
+[2024-02-12 21:19:49] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] microsoft-sdl/javascript-vulnerable-calls: not 0.0.1 {root: microsoft-sdl/javascript-vulnerable-calls@0.0.1}
+[2024-02-12 21:19:49] [SPAMMY] resolve extensions-by-pack> [DERIVATION] microsoft-sdl/javascript-vulnerable-calls: 0.0.1 {microsoft-sdl/javascript-vulnerable-calls: not 0.0.1 {root: microsoft-sdl/javascript-vulnerable-calls@0.0.1}}
+[2024-02-12 21:19:49] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] microsoft-sdl/javascript-vulnerable-calls: * [*], codeql/javascript-all: not * {dependency: microsoft-sdl/javascript-vulnerable-calls@* [*] requires codeql/javascript-all@*}
+[2024-02-12 21:19:49] [SPAMMY] resolve extensions-by-pack> [DECISION 1] microsoft-sdl/javascript-vulnerable-calls: 0.0.1
+[2024-02-12 21:19:49] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/javascript-all: * {microsoft-sdl/javascript-vulnerable-calls: * [*], codeql/javascript-all: not * {dependency: microsoft-sdl/javascript-vulnerable-calls@* [*] requires codeql/javascript-all@*}}
+[2024-02-12 21:19:49] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/javascript-all: * [*] {pack not found: codeql/javascript-all}
+[2024-02-12 21:19:49] [SPAMMY] resolve extensions-by-pack> [CONFLICT] codeql/javascript-all: * [*] {pack not found: codeql/javascript-all}
+[2024-02-12 21:19:49] [SPAMMY] resolve extensions-by-pack>   [CONSTRAINT] codeql/javascript-all: *
+[2024-02-12 21:19:49] [SPAMMY] resolve extensions-by-pack>   [CONSTRAINT] microsoft-sdl/javascript-vulnerable-calls: 0.0.1
+[2024-02-12 21:19:49] [SPAMMY] resolve extensions-by-pack>   [SATISFIER] derivation: codeql/javascript-all: *
+[2024-02-12 21:19:49] [SPAMMY] resolve extensions-by-pack>   [ALMOST_SATISFIER] <none>
+[2024-02-12 21:19:49] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] microsoft-sdl/javascript-vulnerable-calls: * [*] {conflict}
+[2024-02-12 21:19:49] [SPAMMY] resolve extensions-by-pack> [FAILURE]
+[2024-02-12 21:19:49] [SPAMMY] resolve extensions-by-pack>   Because 'microsoft-sdl/javascript-vulnerable-calls' depends on 'codeql/javascript-all@*', but pack 'codeql/javascript-all' was not found, version solving failed.
+[2024-02-12 21:19:49] [ERROR] resolve extensions-by-pack> ERROR: Pack 'codeql/javascript-all@0.8.1' was not found in the pack download cache. Run 'codeql pack install' to download the dependencies. (/dependencyflow-javascript/0.0.1/qlpack.yml:1,1-1)
+[2024-02-12 21:19:49] [ERROR] resolve extensions-by-pack> ERROR: No valid pack solution found:
+                              Because 'microsoft-sdl/javascript-vulnerable-calls' depends on 'codeql/javascript-all@*', but pack 'codeql/javascript-all' was not found, version solving failed.
+                               (/dependencyflow-javascript/0.0.1/qlpack.yml:1,1-1)
+[2024-02-12 21:19:49] Sequence stamp origin is -6219057719692970296
+[2024-02-12 21:19:49] Pausing evaluation to close the cache at sequence stamp o+0
+[2024-02-12 21:19:49] The disk cache is freshly trimmed; leave it be.
+[2024-02-12 21:19:49] Unpausing evaluation
+[2024-02-12 21:19:49] This NaiveBuddyAllocator requested 0 eviction rounds.
+[2024-02-12 21:19:49] Exception caught at top level: A 'codeql resolve extensions-by-pack' operation failed with error code 2
+                      com.semmle.cli2.picocli.PlumbingRunner.call(PlumbingRunner.java:70)
+                      com.semmle.cli2.picocli.SubcommandCommon.callPlumbingInProcess(SubcommandCommon.java:165)
+                      com.semmle.cli2.resolve.ResolveExtensionsCommand.executeJSON(ResolveExtensionsCommand.java:54)
+                      com.semmle.cli2.resolve.ResolveExtensionsCommand.executeJSON(ResolveExtensionsCommand.java:17)
+                      com.semmle.cli2.picocli.SimpleJsonSubcommand.executeInsistingOnJSONWithExistingMessages(SimpleJsonSubcommand.java:130)
+                      com.semmle.cli2.picocli.SubcommandCommon.withCompilationMessages(SubcommandCommon.java:417)
+                      com.semmle.cli2.picocli.SimpleJsonSubcommand.executeInsistingOnJSON(SimpleJsonSubcommand.java:119)
+                      com.semmle.cli2.picocli.PlumbingRunner.call(PlumbingRunner.java:56)
+                      com.semmle.cli2.picocli.SubcommandCommon.callPlumbingInProcess(SubcommandCommon.java:165)
+                      com.semmle.cli2.execute.ExecuteQueriesCommand.resolveExtensions(ExecuteQueriesCommand.java:695)
+                      com.semmle.cli2.execute.ExecuteQueriesCommand.executeSubcommand(ExecuteQueriesCommand.java:397)
+                      com.semmle.cli2.picocli.SubcommandCommon.lambda$executeSubcommandWithMessages$5(SubcommandCommon.java:747)
+                      com.semmle.cli2.picocli.SubcommandCommon.withCompilationMessages(SubcommandCommon.java:417)
+                      com.semmle.cli2.picocli.SubcommandCommon.executeSubcommandWithMessages(SubcommandCommon.java:745)
+                      com.semmle.cli2.picocli.SubcommandCommon.call(SubcommandCommon.java:629)
+                      com.semmle.cli2.picocli.SubcommandMaker.runMain(SubcommandMaker.java:237)
+                      com.semmle.cli2.picocli.SubcommandMaker.runMain(SubcommandMaker.java:247)
+                      com.semmle.cli2.CodeQL.main(CodeQL.java:113)
